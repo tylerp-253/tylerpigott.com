@@ -1,11 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
+// Speaking homepage. The full page (markup, styles, scripts) lives in
+// src/speaking/index.html so it can be edited as one file. Images are in public/img/.
+import page from '../speaking/index.html?raw';
 ---
-<Base>
-  <h1>Tyler Pigott</h1>
-  <p>
-    Marketing coach, StoryBrand Guide, and keynote speaker. I help freelance
-    marketers, independent consultants, and agency owners grow with clarity.
-  </p>
-  <p><em>Placeholder homepage. The new design goes here.</em></p>
-</Base>
+<Fragment set:html={page} />

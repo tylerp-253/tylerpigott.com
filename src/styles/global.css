@@ -1,40 +1,36 @@
-/* Placeholder styles. Replaced when the new design lands. */
-:root {
-  --text: #1a1a1a;
-  --muted: #5c5c5c;
-  --bg: #ffffff;
-  --accent: #1f4fd1;
-  --max: 720px;
+/* Matches the speaking homepage: "One Clear Sentence" editorial system. */
+:root{
+  --paper:#F4F5F1; --panel:#E9ECE6; --ink:#121614; --muted:#59625C; --rule:#D5DAD3;
+  --fir:#1D5A43; --fir-hover:#164A37; --on-fir:#F4F5F1;
+  --grain:url(/img/grain-paper.webp);
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --body:"Schibsted Grotesk",Arial,"Helvetica Neue",system-ui,sans-serif;
+  --max:720px;
 }
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-}
-
-.site-header,
-.site-footer,
-main {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1.5rem 16px;
-}
-
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand { font-weight: 700; text-decoration: none; color: var(--text); }
-nav a { color: var(--muted); text-decoration: none; margin-left: 1rem; }
-a { color: var(--accent); }
-.site-footer { color: var(--muted); font-size: 0.9rem; }
-.post-list { list-style: none; padding: 0; }
-.post-list li { margin-bottom: 1.25rem; }
-.post-date { color: var(--muted); font-size: 0.9rem; }
+@media (prefers-color-scheme:dark){:root{
+  --paper:#0E1210;--panel:#161C19;--ink:#ECEFEA;--muted:#9AA49E;--rule:#28312C;--fir:#6DBB96;--fir-hover:#82C8A6;--on-fir:#0E1210;
+  --grain:url(/img/grain-film.webp);color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper) var(--grain) repeat 0 0/256px 256px;color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--fir)}
+:focus-visible{outline:2px solid var(--fir);outline-offset:3px}
+.site-header,.site-footer,main{max-width:var(--max);margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.site-header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;border-bottom:1px solid var(--rule)}
+.brand{font-family:var(--display);font-size:1.5rem;text-decoration:none}
+.site-header nav,.site-footer nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.site-header nav a{text-decoration:none;color:var(--muted);font-weight:500}
+.site-header nav a:hover{color:var(--ink)}
+.site-header nav a.cta{background:var(--fir);color:var(--on-fir);padding:10px 14px;border-radius:2px;font-weight:600}
+.site-header nav a.cta:hover{background:var(--fir-hover);color:var(--on-fir)}
+main{padding-block:56px 72px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(2.4rem,6vw,3.6rem);margin:0 0 .4em}
+h2{font-size:2rem;margin:1.6em 0 .4em}
+p,li{max-width:65ch}
+.site-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:28px;border-top:1px solid var(--rule);color:var(--muted);font-size:.9375rem}
+.site-footer nav a{color:var(--muted);text-decoration:none}
+.post-list{list-style:none;padding:0;border-top:1px solid var(--rule)}
+.post-list li{padding-block:20px;border-bottom:1px solid var(--rule);margin:0}
+.post-list a{font-family:var(--display);font-size:1.6rem;text-decoration:none}
+.post-date{color:var(--muted);font-size:.9375rem}

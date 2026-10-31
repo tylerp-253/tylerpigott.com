@@ -1,6 +1,6 @@
 ---
-// Shared shell for every page. The new design replaces the styles and the
-// header/footer markup here; page content stays untouched.
+// Shell for the blog and any future pages. The homepage (speaking page) is
+// self-contained in src/speaking/index.html; this matches its look.
 import '../styles/global.css';
 
 interface Props {
@@ -8,9 +8,9 @@ interface Props {
   description?: string;
 }
 
-const siteTitle = 'Tyler Pigott | Marketing Coach, StoryBrand Guide & Keynote Speaker';
+const siteTitle = 'Tyler Pigott | Keynote Speaker & Workshop Leader, VP at StoryBrand';
 const siteDescription =
-  'Tyler Pigott helps freelance marketers, independent consultants, and agency owners grow with clarity through coaching, StoryBrand methodology, and speaking.';
+  'Keynotes and workshops from Tyler Pigott, VP at StoryBrand, that help teams say what they do in one clear sentence.';
 
 const { title, description = siteDescription } = Astro.props;
 const fullTitle = title ? `${title} | Tyler Pigott` : siteTitle;
@@ -29,12 +29,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600&display=swap" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="/">Tyler Pigott</a>
       <nav>
+        <a href="/#talks">Talks</a>
         <a href="/blog/">Blog</a>
+        <a class="cta" href="/#book">Check availability</a>
       </nav>
     </header>
     <main>
@@ -42,6 +47,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </main>
     <footer class="site-footer">
       <p>© {new Date().getFullYear()} Tyler Pigott</p>
+      <nav><a href="/">Speaking</a><a href="/privacy.html">Privacy</a></nav>
     </footer>
   </body>
 </html>
