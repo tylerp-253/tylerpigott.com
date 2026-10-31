@@ -1,0 +1,47 @@
+---
+// Shared shell for every page. The new design replaces the styles and the
+// header/footer markup here; page content stays untouched.
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const siteTitle = 'Tyler Pigott | Marketing Coach, StoryBrand Guide & Keynote Speaker';
+const siteDescription =
+  'Tyler Pigott helps freelance marketers, independent consultants, and agency owners grow with clarity through coaching, StoryBrand methodology, and speaking.';
+
+const { title, description = siteDescription } = Astro.props;
+const fullTitle = title ? `${title} | Tyler Pigott` : siteTitle;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Tyler Pigott</a>
+      <nav>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>© {new Date().getFullYear()} Tyler Pigott</p>
+    </footer>
+  </body>
+</html>

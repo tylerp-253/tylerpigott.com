@@ -1,0 +1,40 @@
+/* Placeholder styles. Replaced when the new design lands. */
+:root {
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --bg: #ffffff;
+  --accent: #1f4fd1;
+  --max: 720px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.site-header,
+.site-footer,
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 16px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+nav a { color: var(--muted); text-decoration: none; margin-left: 1rem; }
+a { color: var(--accent); }
+.site-footer { color: var(--muted); font-size: 0.9rem; }
+.post-list { list-style: none; padding: 0; }
+.post-list li { margin-bottom: 1.25rem; }
+.post-date { color: var(--muted); font-size: 0.9rem; }
