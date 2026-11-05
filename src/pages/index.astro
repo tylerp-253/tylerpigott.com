@@ -1,6 +1,17 @@
 ---
 // Speaking homepage. The full page (markup, styles, scripts) lives in
 // src/speaking/index.html so it can be edited as one file. Images are in public/img/.
+// At build time this also generates FAQPage structured data from the page's FAQ,
+// so search engines always see the same questions and answers as visitors.
 import page from '../speaking/index.html?raw';
+
+const strip = (s: string) =>
+  s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+const faqs = [...page.matchAll(/<details><summary>([\s\S]*?)<span class="x"[\s\S]*?<\/summary>([\s\S]*?)<\/details>/g)]
+  .map(([, q, a]) => ({ '@type': 'Question', name: strip(q), acceptedAnswer: { '@type': 'Answer', text: strip(a) } }));
+const faqLd = faqs.length
+  ? `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs })}</script>`
+  : '';
+const html = page.replace('</head>', `${faqLd}\n</head>`);
 ---
-<Fragment set:html={page} />
+<Fragment set:html={html} />

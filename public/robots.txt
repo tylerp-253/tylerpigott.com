@@ -1,0 +1,5 @@
+# tylerpigott.com — search engines and AI assistants are welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://tylerpigott.com/sitemap-index.xml
