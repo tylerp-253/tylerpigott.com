@@ -38,5 +38,5 @@ Every talk works for a whole company, a single business unit like sales or marke
 - [Speaking homepage](https://tylerpigott.com/): talks, formats, fees, FAQ and booking form.
 - [Speaker reel](https://vimeo.com/1142547742/9e5e09406b): 98-second video.
 - [Blog](https://tylerpigott.com/blog/)
-- [Privacy note](https://tylerpigott.com/privacy.html)
+- [Privacy note](https://tylerpigott.com/privacy)
 - [LinkedIn](https://www.linkedin.com/in/tylerpigott/)
