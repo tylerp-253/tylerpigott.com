@@ -321,11 +321,11 @@ cite b{color:var(--ink);font-weight:600}
 .stat .n{font-family:var(--display);font-size:var(--s-stat);line-height:1;font-variant-numeric:tabular-nums}
 .stat .t{color:var(--muted);margin-top:8px;font-size:var(--s-0)}
 .brands{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--gap);margin-top:56px}
-.brands ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gap)}
+.brands ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap)}
 .brands li{border-top:1px solid var(--rule);padding:14px 0 18px;font-family:var(--display);font-size:var(--s-3);line-height:1.15;min-width:0}
 .brands .label{padding-top:16px;align-items:flex-start}
 .brands .label::before{margin-top:.7em}
-@media (max-width:860px){.brands{grid-template-columns:minmax(0,1fr);gap:12px}.brands ul{grid-template-columns:repeat(2,minmax(0,1fr))}.brands .label{padding-top:0}}
+@media (max-width:860px){.brands{grid-template-columns:minmax(0,1fr);gap:12px}.brands ul{grid-template-columns:repeat(2,minmax(0,1fr))}.brands li:last-child:nth-child(odd){grid-column:1/-1}.brands .label{padding-top:0}}
 @media (max-width:480px){.stat .n{font-size:2rem}.stat .t{font-size:.8125rem}.brands li{font-size:1.3125rem}}
 
 /* §4 Problem */
@@ -664,7 +664,7 @@ footer{padding-block:36px;border-top:1px solid var(--rule);font-size:var(--s-0);
         <p class="label">Trusted by brands like</p>
         <ul>
           <li>StoryBrand</li><li>Amazon Web Services</li><li>TD SYNNEX</li><li>Trane Technologies</li>
-          <li>Columbia Bank</li><li>Boldyn Networks</li><li>NexStar Networks</li><li>Future-Focused Leader</li>
+          <li>Columbia Bank</li><li>Boldyn Networks</li><li>NexStar Networks</li><li>Future-Focused Leader</li><li>Coach Builder</li>
         </ul>
       </div>
     </div>
